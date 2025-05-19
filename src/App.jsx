@@ -26,7 +26,7 @@ function App() {
             return {
               id: data.id,
               name: data.name,
-              sprites: data.sprites.front_default,
+              sprites: data.sprites.other['official-artwork'].front_default,
               stats: data.stats.filter((stat) => (stat.stat.name !== 'special-attack' && stat.stat.name !== 'special-defense')).map((stat) => ({
                 name: stat.stat.name,
                 value: stat.base_stat,
@@ -66,6 +66,9 @@ function App() {
     <div className="App">
       
       <PokemonList pokemons={pokemons}/>
+      <div className="bg-blue-500 text-white p-4 rounded-lg">
+        Tailwind is working!
+    </div>
       
     </div>
   );
