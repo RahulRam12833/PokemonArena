@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+
 import CombatArena from './pages/CombatArena';
 import PokemonCard from './components/PokemonCard';
 import axios from 'axios';
@@ -26,7 +27,7 @@ function App() {
             return {
               id: data.id,
               name: data.name,
-              sprites: data.sprites.front_default,
+              sprites: data.sprites.other['official-artwork'].front_default,
               stats: data.stats.filter((stat) => (stat.stat.name !== 'special-attack' && stat.stat.name !== 'special-defense')).map((stat) => ({
                 name: stat.stat.name,
                 value: stat.base_stat,
@@ -66,6 +67,9 @@ function App() {
     <div className="App">
       
       <PokemonList pokemons={pokemons}/>
+      <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
       
     </div>
   );
